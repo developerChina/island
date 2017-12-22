@@ -18,7 +18,7 @@ public class EPBoxDemo {
 			switch(a){
 			case 1 : System.out.println("̧抬杆");
 
-			EPIntegrateBox.INSTANCE.EP_OpenDoorEx(3, new String("192.168.0.199"), 3);
+			EPIntegrateBox.INSTANCE.EP_OpenDoorEx(3, new String("192.168.1.98"), 3);
 			break;			
 			case 2 : System.out.println("显示");	
 

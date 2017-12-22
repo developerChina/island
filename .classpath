@@ -12,5 +12,6 @@
 	<classpathentry kind="lib" path="lib/RXTXcomm.jar"/>
 	<classpathentry kind="lib" path="lib/slf4j-api-1.6.1.jar"/>
 	<classpathentry kind="lib" path="lib/slf4j-simple-1.6.4.jar"/>
+	<classpathentry kind="lib" path="lib/JNative.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

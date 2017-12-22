@@ -2,18 +2,20 @@ package main;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.Date;
 import java.util.Properties;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.core.dao.BaseDao;
 import org.core.dao.BaseDaoImpl;
 
+import com.eparking.api.EPIntegrateBox;
+
 import gnu.io.SerialPort;
 import gnu.io.SerialPortEvent;
 import gnu.io.SerialPortEventListener;
+import utils.FileUtil;
 import utils.LoadPropertyUtil;
 import utils.SerialTool;
 
@@ -32,26 +34,32 @@ public class IslandApp implements SerialPortEventListener {
 	Date beginTime = new Date();
 	// 4.定义 数据源
 	public static BaseDao baseDao = new BaseDaoImpl();
-	// 5.定义 队列
-	private BlockingQueue<String> queue;
+
 	// 6.定义 自镇长的序列
 	private static AtomicInteger count = new AtomicInteger();
 	// 7.定义配置属性
 	Properties properties = LoadPropertyUtil.loadPropertyFile("system.properties");
-	
-	public IslandApp(BlockingQueue<String> queue) {
+
+	String com=(String) properties.get("com");
+	String eparkIp=(String) properties.get("eparkIp");
+	int unIsland=Integer.valueOf((String) properties.get("unIsland"));
+	String bigLed=(String) properties.get("bigLed");
+	String smallLed=(String) properties.get("smallLed");
+		
+	public IslandApp() {
 		try {
 			// 获取串口、打开窗串口、获取串口的输入流。
-			serialPort = SerialTool.openPort((String) properties.get("com"), 115200);
+			serialPort = SerialTool.openPort(com, 115200);
 			inputStream = serialPort.getInputStream();
 			// 向串口添加事件监听对象。
 			serialPort.addEventListener(this);
 			// 设置当端口有可用数据时触发事件，此设置必不可少。
 			serialPort.notifyOnDataAvailable(true);
+			//初始化车辆
+			VehicleIdent.Dev_Bash_Init(eparkIp, unIsland);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	    this.queue = queue;
 	}
 
 	/**
@@ -80,28 +88,35 @@ public class IslandApp implements SerialPortEventListener {
 		// System.out.println("两个时间相差" + interval + "秒");// 会打印出相差3秒
 		beginTime = endTime;
 		if (interval >= 3) {// 系统默认等待 时间 单位：秒
-			call((String) properties.get("unIsland"));
+			call(unIsland);
 		}
 	}
-    /**
-     * 业务处理类
-     * 流程： 数据库里 查询  “VIP+普通号”-》删除数据库-》把记录压入   车辆识别的队列里
-     * @param unIsland
-     */
-	public void call(String unIsland) {
+
+	/**
+	 * 业务处理类 流程： 数据库里 查询 “VIP+普通号”-》删除数据库-》把记录压入 车辆识别的队列里
+	 * 
+	 * @param unIsland
+	 */
+	public void call(Integer unIsland) {
 		/**
-		 * 1:  记录压入   车辆识别的队列里
+		 * 1: 记录压入 车辆识别的队列里
 		 */
-		String data = "data:" + count.incrementAndGet();
+		String data = "京A4G8B0" + count.incrementAndGet();
+		FileUtil.saveAs(data,System.getProperty("user.dir") + "\\bin\\res\\Sequence.txt");
+		/**
+		 * 2:语音播报 
+		 */
 		try {
-			if (!queue.offer(data, 2, TimeUnit.SECONDS)) {
-				System.out.println("放入数据失败："+data);
-			}
-		} catch (InterruptedException e) {
+			EPIntegrateBox.INSTANCE.EP_PlayVoiceEx(3,eparkIp, 16, (data + "\0").getBytes("GBK"), 3);
+		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
 		/**
-		 * 2:语音播报   ， “小显示屏” 显示   ，  “大显示屏”显示
+		 * 3:“小显示屏” 显示
+		 */
+		LedView.view_send(smallLed, data);
+		/**
+		 * 4:“大显示屏” 显示
 		 */
 		
 	}

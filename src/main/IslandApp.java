@@ -4,6 +4,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Date;
 import java.util.Properties;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import org.core.dao.BaseDao;
 import org.core.dao.BaseDaoImpl;
@@ -29,18 +32,16 @@ public class IslandApp implements SerialPortEventListener {
 	Date beginTime = new Date();
 	// 4.定义 数据源
 	public static BaseDao baseDao = new BaseDaoImpl();
-
-	public static void main(String[] args) {
-		/**
-		 * 接受 呼叫按键 呼叫
-		 */
-		new IslandApp();
-	}
-
-	public IslandApp() {
+	// 5.定义 队列
+	private BlockingQueue<String> queue;
+	// 6.定义 自镇长的序列
+	private static AtomicInteger count = new AtomicInteger();
+	// 7.定义配置属性
+	Properties properties = LoadPropertyUtil.loadPropertyFile("system.properties");
+	
+	public IslandApp(BlockingQueue<String> queue) {
 		try {
 			// 获取串口、打开窗串口、获取串口的输入流。
-			Properties properties = LoadPropertyUtil.loadPropertyFile("system.properties");
 			serialPort = SerialTool.openPort((String) properties.get("com"), 115200);
 			inputStream = serialPort.getInputStream();
 			// 向串口添加事件监听对象。
@@ -49,9 +50,8 @@ public class IslandApp implements SerialPortEventListener {
 			serialPort.notifyOnDataAvailable(true);
 		} catch (Exception e) {
 			e.printStackTrace();
-		} finally {
-			// SerialTool.closePort(serialPort);
 		}
+	    this.queue = queue;
 	}
 
 	/**
@@ -80,24 +80,29 @@ public class IslandApp implements SerialPortEventListener {
 		// System.out.println("两个时间相差" + interval + "秒");// 会打印出相差3秒
 		beginTime = endTime;
 		if (interval >= 3) {// 系统默认等待 时间 单位：秒
-			call(1);
+			call((String) properties.get("unIsland"));
 		}
 	}
-
-	public void call(int unIsland) {
-		System.out.println("==============================");// 会打印出相差3秒
+    /**
+     * 业务处理类
+     * 流程： 数据库里 查询  “VIP+普通号”-》删除数据库-》把记录压入   车辆识别的队列里
+     * @param unIsland
+     */
+	public void call(String unIsland) {
 		/**
-		 * 1: 在队列里查 和 unIsland匹配的卸货到的数据-》优先“vip用户”，然后是“普通用户” 队列：拿走一条记录 数据库：删除一条记录
+		 * 1:  记录压入   车辆识别的队列里
 		 */
-
+		String data = "data:" + count.incrementAndGet();
+		try {
+			if (!queue.offer(data, 2, TimeUnit.SECONDS)) {
+				System.out.println("放入数据失败："+data);
+			}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		/**
-		 * 2:队列里拿到 叫号 车牌号，调用 “车辆识别仪” 匹配 叫号车牌 ----》抬杆 或 闭合
+		 * 2:语音播报   ， “小显示屏” 显示   ，  “大显示屏”显示
 		 */
-
-		/**
-		 * 
-		 */
-
+		
 	}
-
 }

@@ -3,6 +3,8 @@ package main;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
+import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.Properties;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -40,12 +42,17 @@ public class IslandApp implements SerialPortEventListener {
 	// 7.定义配置属性
 	Properties properties = LoadPropertyUtil.loadPropertyFile("system.properties");
 
+	// 8.定义当前处理队列
+	public static UnIslandQueue queue=null;
+	// 9.定义当前队列类型
+	public static int source=0;;// 0=vip  , 1=普通表
+		
 	String com=(String) properties.get("com");
 	String eparkIp=(String) properties.get("eparkIp");
 	int unIsland=Integer.valueOf((String) properties.get("unIsland"));
 	String bigLed=(String) properties.get("bigLed");
 	String smallLed=(String) properties.get("smallLed");
-		
+	
 	public IslandApp() {
 		try {
 			// 获取串口、打开窗串口、获取串口的输入流。
@@ -97,27 +104,80 @@ public class IslandApp implements SerialPortEventListener {
 	 * 
 	 * @param unIsland
 	 */
-	public void call(Integer unIsland) {
+	public void call(int unIsland) {
 		/**
 		 * 1: 记录压入 车辆识别的队列里
 		 */
-		String data = "京A4G8B0" + count.incrementAndGet();
-		FileUtil.saveAs(data,System.getProperty("user.dir") + "\\bin\\res\\Sequence.txt");
-		/**
-		 * 2:语音播报 
-		 */
-		try {
-			EPIntegrateBox.INSTANCE.EP_PlayVoiceEx(3,eparkIp, 16, (data + "\0").getBytes("GBK"), 3);
-		} catch (UnsupportedEncodingException e) {
+		try { 
+			
+			//添加历史记录
+			if(queue!=null){
+				 String sql="insert into logis_history (island_no,car_code,comein_time,goout_time,source) value (?,?,?,?,?)";
+				 Object[] para={unIsland,queue.getCar_code(),queue.getComein_time(),new Timestamp(System.currentTimeMillis()),source};
+				 baseDao.insertSql(sql, para);
+				 System.out.println("生成历史:"+queue.getId()+queue.getCar_code()+"类型:"+unIsland);
+			}
+			
+			//首先查询VIP队列
+			Object obj_vip= baseDao.queryFirst(UnIslandQueue.class, "select * from logis_vip order by queue_number");
+			if(obj_vip!=null){
+				queue=(UnIslandQueue) obj_vip;
+				queue.setComein_time(new Date());
+				source=0;
+				baseDao.executeUpdate("delete from logis_vip where id = ? ",queue.getId());
+				System.out.println("消费VIP:"+queue.getId()+"同时入口抬杆，出口落杆");
+				
+			}else{
+				
+				Object obj_guest= baseDao.queryFirst(UnIslandQueue.class, "select * from logis_ordinary order by queue_number");
+				if(obj_guest!=null){
+					queue=(UnIslandQueue) obj_guest;
+					queue.setComein_time(new Date());
+					source=1;
+					baseDao.executeUpdate("delete from logis_ordinary where id = ? ",queue.getId());
+					System.out.println("消费Guest:"+queue.getId()+"入口抬杆，出口落杆");
+					//添加入口抬杆，出口落杆
+					
+				}else{
+					queue=null;
+					source=0;
+				}
+			}
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		/**
-		 * 3:“小显示屏” 显示
-		 */
-		LedView.view_send(smallLed, data);
-		/**
-		 * 4:“大显示屏” 显示
-		 */
+		
+		
+		//判断没有队列
+		if(queue!=null){
+			String data = queue.getCar_code();
+			FileUtil.saveAs(data,System.getProperty("user.dir") + "\\bin\\res\\Sequence.txt");
+			/**
+			 * 2:语音播报 
+			 */
+			try {
+				EPIntegrateBox.INSTANCE.EP_PlayVoiceEx(3,eparkIp, 16, (data + "\0").getBytes("GBK"), 3);
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			}
+			/**
+			 * 3:“小显示屏” 显示
+			 */
+			LedView.view_send(smallLed, data);
+			/**
+			 * 4:“大显示屏” 显示
+			 */
+		}else{
+			String data = "没有车辆";
+			/**
+			 * 2:语音播报 
+			 */
+			try {
+				EPIntegrateBox.INSTANCE.EP_PlayVoiceEx(3,eparkIp, 16, (data + "\0").getBytes("GBK"), 3);
+			} catch (UnsupportedEncodingException e) {
+				e.printStackTrace();
+			}
+		}
 		
 	}
 }

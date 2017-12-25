@@ -112,24 +112,17 @@ public class IslandApp implements SerialPortEventListener {
 		try { 
 			//添加历史记录
 			String data = FileLockUtil.readByLines(System.getProperty("user.dir") + "\\bin\\res\\Sequence.txt");
-			System.out.println("--------------"+data);
-			if(!data.equals("") && data.split(",").length==4) {
-				String[] data_=data.split(",");
-				System.out.println("--------flag------"+data_[0]);
-				if("1".equals(data_[0]))
-					System.out.println("--------flag------"+data_[0]);
-				Integer flag=Integer.parseInt(data_[0]);
-				System.out.println("--------flag------"+flag);
-				String car_code=data.split(",")[1];
-				String comeinTime=data.split(",")[2];
-				String soure=data.split(",")[3];
-				System.out.println("--------------");
-				if(flag==1) {
-					System.out.println("22222222222222222222222222222222");
+			String[] data_=data.split(",");
+			if(!data.equals("") && data_.length==5) {
+				String flag=data_[0];
+				String car_code=data_[1];
+				String comeinTime=data_[2];
+				String soure=data_[3];
+				if("1".equals(flag)) {
 					 String sql="insert into logis_history (island_no,car_code,comein_time,goout_time,source) value (?,?,?,?,?)";
 					 Object[] para={unIsland,car_code,comeinTime,new Timestamp(System.currentTimeMillis()),soure};
 					 baseDao.insertSql(sql, para);
-					 System.out.println("生成历史:"+queue.getId()+queue.getCar_code()+"类型:"+unIsland);
+					 System.out.println("生成历史:"+car_code+"类型:"+unIsland);
 				}
 			}
 			
@@ -166,7 +159,7 @@ public class IslandApp implements SerialPortEventListener {
 		
 		//判断没有队列
 		if(queue!=null){
-			String data = "0,"+queue.getCar_code()+","+DateUtil.DateToString(queue.getComein_time(), DateStyle.YYYY_MM_DD_HH_MM_SS)+","+source;
+			String data = "0,"+queue.getCar_code()+","+DateUtil.DateToString(queue.getComein_time(), DateStyle.YYYY_MM_DD_HH_MM_SS)+","+source+",";
 			FileLockUtil.saveAs(data,System.getProperty("user.dir") + "\\bin\\res\\Sequence.txt");
 			/**
 			 * 2:语音播报 

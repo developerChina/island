@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.Properties;
-import java.util.concurrent.atomic.AtomicInteger;
 
 import org.core.dao.BaseDao;
 import org.core.dao.BaseDaoImpl;
@@ -17,7 +16,9 @@ import com.eparking.api.EPIntegrateBox;
 import gnu.io.SerialPort;
 import gnu.io.SerialPortEvent;
 import gnu.io.SerialPortEventListener;
-import utils.FileUtil;
+import utils.DateStyle;
+import utils.DateUtil;
+import utils.FileLockUtil;
 import utils.LoadPropertyUtil;
 import utils.SerialTool;
 
@@ -38,7 +39,7 @@ public class IslandApp implements SerialPortEventListener {
 	public static BaseDao baseDao = new BaseDaoImpl();
 
 	// 6.定义 自镇长的序列
-	private static AtomicInteger count = new AtomicInteger();
+//	private static AtomicInteger count = new AtomicInteger();
 	// 7.定义配置属性
 	Properties properties = LoadPropertyUtil.loadPropertyFile("system.properties");
 
@@ -109,13 +110,27 @@ public class IslandApp implements SerialPortEventListener {
 		 * 1: 记录压入 车辆识别的队列里
 		 */
 		try { 
-			
 			//添加历史记录
-			if(queue!=null){
-				 String sql="insert into logis_history (island_no,car_code,comein_time,goout_time,source) value (?,?,?,?,?)";
-				 Object[] para={unIsland,queue.getCar_code(),queue.getComein_time(),new Timestamp(System.currentTimeMillis()),source};
-				 baseDao.insertSql(sql, para);
-				 System.out.println("生成历史:"+queue.getId()+queue.getCar_code()+"类型:"+unIsland);
+			String data = FileLockUtil.readByLines(System.getProperty("user.dir") + "\\bin\\res\\Sequence.txt");
+			System.out.println("--------------"+data);
+			if(!data.equals("") && data.split(",").length==4) {
+				String[] data_=data.split(",");
+				System.out.println("--------flag------"+data_[0]);
+				if("1".equals(data_[0]))
+					System.out.println("--------flag------"+data_[0]);
+				Integer flag=Integer.parseInt(data_[0]);
+				System.out.println("--------flag------"+flag);
+				String car_code=data.split(",")[1];
+				String comeinTime=data.split(",")[2];
+				String soure=data.split(",")[3];
+				System.out.println("--------------");
+				if(flag==1) {
+					System.out.println("22222222222222222222222222222222");
+					 String sql="insert into logis_history (island_no,car_code,comein_time,goout_time,source) value (?,?,?,?,?)";
+					 Object[] para={unIsland,car_code,comeinTime,new Timestamp(System.currentTimeMillis()),soure};
+					 baseDao.insertSql(sql, para);
+					 System.out.println("生成历史:"+queue.getId()+queue.getCar_code()+"类型:"+unIsland);
+				}
 			}
 			
 			//首先查询VIP队列
@@ -141,6 +156,7 @@ public class IslandApp implements SerialPortEventListener {
 				}else{
 					queue=null;
 					source=0;
+					FileLockUtil.saveAs("",System.getProperty("user.dir") + "\\bin\\res\\Sequence.txt");
 				}
 			}
 		} catch (SQLException e) {
@@ -150,13 +166,13 @@ public class IslandApp implements SerialPortEventListener {
 		
 		//判断没有队列
 		if(queue!=null){
-			String data = queue.getCar_code();
-			FileUtil.saveAs(data,System.getProperty("user.dir") + "\\bin\\res\\Sequence.txt");
+			String data = "0,"+queue.getCar_code()+","+DateUtil.DateToString(queue.getComein_time(), DateStyle.YYYY_MM_DD_HH_MM_SS)+","+source;
+			FileLockUtil.saveAs(data,System.getProperty("user.dir") + "\\bin\\res\\Sequence.txt");
 			/**
 			 * 2:语音播报 
 			 */
 			try {
-				EPIntegrateBox.INSTANCE.EP_PlayVoiceEx(3,eparkIp, 16, (data + "\0").getBytes("GBK"), 3);
+				EPIntegrateBox.INSTANCE.EP_PlayVoiceEx(3,eparkIp, 16, (queue.getCar_code() + "\0").getBytes("GBK"), 3);
 			} catch (UnsupportedEncodingException e) {
 				e.printStackTrace();
 			}

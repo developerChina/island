@@ -5,7 +5,7 @@ import com.eparking.callback.IOnConnectStatus;
 import com.eparking.callback.IOnGetDataEx2;
 import com.eparking.data.PlateResult_Ex;
 
-import utils.FileUtil;
+import utils.FileLockUtil;
 
 public class VehicleIdent {
 
@@ -67,9 +67,12 @@ public class VehicleIdent {
 					String shootTime=plateResult.shootTime.Year + "-" + plateResult.shootTime.Month + "-"
 							+ plateResult.shootTime.Day + " " + plateResult.shootTime.Hour + ":"
 							+ plateResult.shootTime.Minute + ":" + plateResult.shootTime.Second;
-					String data = FileUtil.readByLines(System.getProperty("user.dir") + "\\bin\\res\\Sequence.txt");
+					String data = FileLockUtil.readByLines(System.getProperty("user.dir") + "\\bin\\res\\Sequence.txt");
 					System.out.println(data+ "=======" + cacrip+"====="+cacrno+"====="+shootTime);
-					
+					/**
+					 * 比对  抬杆 进入
+					 * 
+					 */
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

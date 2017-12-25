@@ -1,0 +1,731 @@
+19:31:42.727  connect 192.168.1.98 fail!
+19:31:42.728  192.168.1.98:配置文件中获取网卡IP失败, ret = -3
+19:31:42.731  192.168.1.98:通过接口自动匹配本地ip地址为:192.168.1.128
+19:31:42.732  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+19:31:43.732  192.168.1.98:自动分配端口成功, ret = 0，port=10005
+19:31:43.732  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+19:31:43.733  192.168.1.98:bind 10005 port success, BindPort
+19:31:43.733  192.168.1.98:bind 10006 port succeed, hsdk_socket->port = 10006
+19:31:43.734  192.168.1.98:bind 10006 port success, nAlivePort
+19:31:43.781  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+19:31:44.782  接收jpeg流的ip和端口号:192.168.1.128-10000
+19:31:44.788  192.168.1.98:向设备发送5010命令成功
+19:31:44.803  192.168.1.98:向设备发送5012命令成功
+19:31:44.819  192.168.1.98:向设备发送5013命令成功
+19:31:44.821  KHT_InitRecvRecoRst is succeed
+19:31:44.821  192.168.1.98:识别结果接收启动
+19:31:44.822  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+19:31:44.822  KHT_OpenJpegStreamConnent is succeed
+19:31:44.823  192.168.1.98:JPEG流接收启动
+19:31:44.824  192.168.1.98:bind 10001 port succeed, hsdk_socket->port = 10001
+19:31:44.824  192.168.1.98:bind 10001 port success, alarm
+19:31:44.825  KHT_OpenAlarmConnent is succeed
+19:31:44.826  192.168.1.98:Alarm接收启动
+19:31:44.826  192.168.1.98:连接设备成功
+19:31:47.822  192.168.1.98:Server waiting accept client...
+19:31:47.822  192.168.1.98:(192.168.1.98) client connect
+19:35:52.497  connect 192.168.1.98 fail!
+19:35:52.497  192.168.1.98:配置文件中获取网卡IP失败, ret = -3
+19:35:52.500  192.168.1.98:通过接口自动匹配本地ip地址为:192.168.1.128
+19:35:52.501  192.168.1.98:bind 10005 port fail, ret = 10048, hsdk_socket->port = 10005
+19:35:52.502  192.168.1.98:bind 10015 port succeed, hsdk_socket->port = 10015
+19:35:53.504  192.168.1.98:自动分配端口成功, ret = 0，port=10015
+19:35:53.504  192.168.1.98:bind 10015 port succeed, hsdk_socket->port = 10015
+19:35:53.505  192.168.1.98:bind 10015 port success, BindPort
+19:35:53.505  192.168.1.98:bind 10016 port succeed, hsdk_socket->port = 10016
+19:35:53.506  192.168.1.98:bind 10016 port success, nAlivePort
+19:35:53.517  192.168.1.98:bind 10000 port fail, ret = 10048, hsdk_socket->port = 10000
+19:35:53.517  192.168.1.98:bind 10010 port succeed, hsdk_socket->port = 10010
+19:35:54.518  接收jpeg流的ip和端口号:192.168.1.128-10010
+19:35:54.531  192.168.1.98:向设备发送5010命令成功
+19:35:54.536  192.168.1.98:向设备发送5012命令成功
+19:35:54.552  192.168.1.98:向设备发送5013命令成功
+19:35:54.552  KHT_InitRecvRecoRst is succeed
+19:35:54.554  192.168.1.98:识别结果接收启动
+19:35:54.555  192.168.1.98:bind 10010 port succeed, hsdk_socket->port = 10010
+19:35:54.555  KHT_OpenJpegStreamConnent is succeed
+19:35:54.556  192.168.1.98:JPEG流接收启动
+19:35:54.557  192.168.1.98:bind 10011 port succeed, hsdk_socket->port = 10011
+19:35:54.558  192.168.1.98:bind 10011 port success, alarm
+19:35:54.558  KHT_OpenAlarmConnent is succeed
+19:35:54.559  192.168.1.98:Alarm接收启动
+19:35:54.559  192.168.1.98:连接设备成功
+19:35:57.553  192.168.1.98:Server waiting accept client...
+19:35:57.553  192.168.1.98:(192.168.1.98) client connect
+19:40:05.899  connect 192.168.1.98 fail!
+19:40:05.902  192.168.1.98:配置文件中获取网卡IP失败, ret = -3
+19:40:05.911  192.168.1.98:通过接口自动匹配本地ip地址为:192.168.1.128
+19:40:05.912  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+19:40:06.915  192.168.1.98:自动分配端口成功, ret = 0，port=10005
+19:40:06.918  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+19:40:06.920  192.168.1.98:bind 10005 port success, BindPort
+19:40:06.923  192.168.1.98:bind 10006 port succeed, hsdk_socket->port = 10006
+19:40:06.926  192.168.1.98:bind 10006 port success, nAlivePort
+19:40:06.932  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+19:40:07.936  接收jpeg流的ip和端口号:192.168.1.128-10000
+19:40:07.942  192.168.1.98:向设备发送5010命令成功
+19:40:07.950  192.168.1.98:向设备发送5012命令成功
+19:40:07.962  192.168.1.98:向设备发送5013命令成功
+19:40:07.966  KHT_InitRecvRecoRst is succeed
+19:40:07.968  192.168.1.98:识别结果接收启动
+19:40:07.972  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+19:40:07.975  KHT_OpenJpegStreamConnent is succeed
+19:40:07.977  192.168.1.98:JPEG流接收启动
+19:40:07.981  192.168.1.98:bind 10001 port succeed, hsdk_socket->port = 10001
+19:40:07.985  192.168.1.98:bind 10001 port success, alarm
+19:40:07.988  KHT_OpenAlarmConnent is succeed
+19:40:07.991  192.168.1.98:Alarm接收启动
+19:40:07.993  192.168.1.98:连接设备成功
+19:40:10.967  192.168.1.98:Server waiting accept client...
+19:40:10.969  192.168.1.98:(192.168.1.98) client connect
+19:40:13.072  connect 192.168.1.98 fail!
+19:40:13.073  192.168.1.98:配置文件中获取网卡IP失败, ret = -3
+19:40:13.075  192.168.1.98:通过接口自动匹配本地ip地址为:192.168.1.128
+19:40:13.075  192.168.1.98:bind 10005 port fail, ret = 10048, hsdk_socket->port = 10005
+19:40:13.077  192.168.1.98:bind 10015 port succeed, hsdk_socket->port = 10015
+19:40:14.080  192.168.1.98:自动分配端口成功, ret = 0，port=10015
+19:40:14.083  192.168.1.98:bind 10015 port succeed, hsdk_socket->port = 10015
+19:40:14.085  192.168.1.98:bind 10015 port success, BindPort
+19:40:14.088  192.168.1.98:bind 10016 port succeed, hsdk_socket->port = 10016
+19:40:14.090  192.168.1.98:bind 10016 port success, nAlivePort
+19:40:14.100  192.168.1.98:bind 10000 port fail, ret = 10048, hsdk_socket->port = 10000
+19:40:14.102  192.168.1.98:bind 10010 port succeed, hsdk_socket->port = 10010
+19:40:15.104  接收jpeg流的ip和端口号:192.168.1.128-10010
+19:40:15.131  192.168.1.98:向设备发送5010命令成功
+19:40:15.147  192.168.1.98:向设备发送5012命令成功
+19:40:15.154  192.168.1.98:向设备发送5013命令成功
+19:40:15.158  KHT_InitRecvRecoRst is succeed
+19:40:15.162  192.168.1.98:识别结果接收启动
+19:40:15.165  192.168.1.98:bind 10010 port succeed, hsdk_socket->port = 10010
+19:40:15.167  KHT_OpenJpegStreamConnent is succeed
+19:40:15.169  192.168.1.98:JPEG流接收启动
+19:40:15.172  192.168.1.98:bind 10011 port succeed, hsdk_socket->port = 10011
+19:40:15.174  192.168.1.98:bind 10011 port success, alarm
+19:40:15.176  KHT_OpenAlarmConnent is succeed
+19:40:15.178  192.168.1.98:Alarm接收启动
+19:40:15.180  192.168.1.98:连接设备成功
+19:40:18.159  192.168.1.98:Server waiting accept client...
+19:40:18.159  192.168.1.98:(192.168.1.98) client connect
+19:40:22.959  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+19:40:22.962  192.168.1.98:RS485透明发送成功
+19:40:58.925  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+19:40:58.927  192.168.1.98:RS485透明发送成功
+19:42:28.054  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+19:42:28.056  192.168.1.98:RS485透明发送成功
+19:42:51.071  connect 192.168.1.98 fail!
+19:42:51.074  192.168.1.98:配置文件中获取网卡IP失败, ret = -3
+19:42:51.084  192.168.1.98:通过接口自动匹配本地ip地址为:192.168.1.128
+19:42:51.086  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+19:42:52.090  192.168.1.98:自动分配端口成功, ret = 0，port=10005
+19:42:52.091  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+19:42:52.092  192.168.1.98:bind 10005 port success, BindPort
+19:42:52.094  192.168.1.98:bind 10006 port succeed, hsdk_socket->port = 10006
+19:42:52.095  192.168.1.98:bind 10006 port success, nAlivePort
+19:42:52.101  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+19:42:53.102  接收jpeg流的ip和端口号:192.168.1.128-10000
+19:42:53.115  192.168.1.98:向设备发送5010命令成功
+19:42:53.121  192.168.1.98:向设备发送5012命令成功
+19:42:53.128  192.168.1.98:向设备发送5013命令成功
+19:42:53.131  KHT_InitRecvRecoRst is succeed
+19:42:53.133  192.168.1.98:识别结果接收启动
+19:42:53.137  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+19:42:53.141  KHT_OpenJpegStreamConnent is succeed
+19:42:53.143  192.168.1.98:JPEG流接收启动
+19:42:53.146  192.168.1.98:bind 10001 port succeed, hsdk_socket->port = 10001
+19:42:53.148  192.168.1.98:bind 10001 port success, alarm
+19:42:53.151  KHT_OpenAlarmConnent is succeed
+19:42:53.153  192.168.1.98:Alarm接收启动
+19:42:53.155  192.168.1.98:连接设备成功
+19:42:56.132  192.168.1.98:Server waiting accept client...
+19:42:56.135  192.168.1.98:(192.168.1.98) client connect
+19:44:20.638  connect 192.168.1.98 fail!
+19:44:20.642  192.168.1.98:配置文件中获取网卡IP失败, ret = -3
+19:44:20.655  192.168.1.98:通过接口自动匹配本地ip地址为:192.168.1.128
+19:44:20.659  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+19:44:21.662  192.168.1.98:自动分配端口成功, ret = 0，port=10005
+19:44:21.663  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+19:44:21.664  192.168.1.98:bind 10005 port success, BindPort
+19:44:21.664  192.168.1.98:bind 10006 port succeed, hsdk_socket->port = 10006
+19:44:21.665  192.168.1.98:bind 10006 port success, nAlivePort
+19:44:21.670  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+19:44:22.672  接收jpeg流的ip和端口号:192.168.1.128-10000
+19:44:22.684  192.168.1.98:向设备发送5010命令成功
+19:44:22.691  192.168.1.98:向设备发送5012命令成功
+19:44:22.697  192.168.1.98:向设备发送5013命令成功
+19:44:22.700  KHT_InitRecvRecoRst is succeed
+19:44:22.702  192.168.1.98:识别结果接收启动
+19:44:22.706  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+19:44:22.708  KHT_OpenJpegStreamConnent is succeed
+19:44:22.710  192.168.1.98:JPEG流接收启动
+19:44:22.713  192.168.1.98:bind 10001 port succeed, hsdk_socket->port = 10001
+19:44:22.716  192.168.1.98:bind 10001 port success, alarm
+19:44:22.718  KHT_OpenAlarmConnent is succeed
+19:44:22.720  192.168.1.98:Alarm接收启动
+19:44:22.723  192.168.1.98:连接设备成功
+19:44:25.701  192.168.1.98:Server waiting accept client...
+19:44:25.704  192.168.1.98:(192.168.1.98) client connect
+19:44:31.224  connect 192.168.1.98 fail!
+19:44:31.226  192.168.1.98:配置文件中获取网卡IP失败, ret = -3
+19:44:31.238  192.168.1.98:通过接口自动匹配本地ip地址为:192.168.1.128
+19:44:31.240  192.168.1.98:bind 10005 port fail, ret = 10048, hsdk_socket->port = 10005
+19:44:31.243  192.168.1.98:bind 10015 port succeed, hsdk_socket->port = 10015
+19:44:32.246  192.168.1.98:自动分配端口成功, ret = 0，port=10015
+19:44:32.246  192.168.1.98:bind 10015 port succeed, hsdk_socket->port = 10015
+19:44:32.247  192.168.1.98:bind 10015 port success, BindPort
+19:44:32.247  192.168.1.98:bind 10016 port succeed, hsdk_socket->port = 10016
+19:44:32.248  192.168.1.98:bind 10016 port success, nAlivePort
+19:44:32.264  192.168.1.98:bind 10000 port fail, ret = 10048, hsdk_socket->port = 10000
+19:44:32.264  192.168.1.98:bind 10010 port succeed, hsdk_socket->port = 10010
+19:44:33.266  接收jpeg流的ip和端口号:192.168.1.128-10010
+19:44:33.272  192.168.1.98:向设备发送5010命令成功
+19:44:33.279  192.168.1.98:向设备发送5012命令成功
+19:44:33.286  192.168.1.98:向设备发送5013命令成功
+19:44:33.289  KHT_InitRecvRecoRst is succeed
+19:44:33.292  192.168.1.98:识别结果接收启动
+19:44:33.294  192.168.1.98:bind 10010 port succeed, hsdk_socket->port = 10010
+19:44:33.296  KHT_OpenJpegStreamConnent is succeed
+19:44:33.297  192.168.1.98:JPEG流接收启动
+19:44:33.299  192.168.1.98:bind 10011 port succeed, hsdk_socket->port = 10011
+19:44:33.300  192.168.1.98:bind 10011 port success, alarm
+19:44:33.301  KHT_OpenAlarmConnent is succeed
+19:44:33.302  192.168.1.98:Alarm接收启动
+19:44:33.304  192.168.1.98:连接设备成功
+19:44:36.290  192.168.1.98:Server waiting accept client...
+19:44:36.290  192.168.1.98:(192.168.1.98) client connect
+19:44:46.006  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+19:44:46.009  192.168.1.98:RS485透明发送成功
+19:48:05.311  192.168.1.98:Full image recv success!
+19:48:05.333  192.168.1.98:Full image recv success!
+19:48:05.362  192.168.1.98:Plate image recv success!
+19:48:05.363  192.168.1.98:共识别出1个车牌, 第1个识别结果为：蓝，川A738F6[95],nDirection = 4
+19:48:05.464  192.168.1.98:Plate image recv success!
+19:48:05.466  192.168.1.98:共识别出1个车牌, 第1个识别结果为：蓝，川A738F6[95],nDirection = 4
+19:50:20.949  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+19:50:20.951  192.168.1.98:RS485透明发送成功
+19:50:30.337  192.168.1.98:Full image recv success!
+19:50:30.338  192.168.1.98:Plate image recv success!
+19:50:30.338  192.168.1.98:共识别出1个车牌, 第1个识别结果为：蓝，京B02128[66],nDirection = 4
+19:50:30.358  192.168.1.98:Full image recv success!
+19:50:30.360  192.168.1.98:Plate image recv success!
+19:50:30.360  192.168.1.98:共识别出1个车牌, 第1个识别结果为：蓝，京B02128[66],nDirection = 4
+19:51:20.882  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+19:51:20.884  192.168.1.98:RS485透明发送成功
+19:55:26.156  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+19:55:26.158  192.168.1.98:RS485透明发送成功
+20:15:06.779  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+20:15:06.781  192.168.1.98:RS485透明发送成功
+20:16:43.335  connect 192.168.1.98 fail!
+20:16:43.338  192.168.1.98:配置文件中获取网卡IP失败, ret = -3
+20:16:43.351  192.168.1.98:通过接口自动匹配本地ip地址为:192.168.1.128
+20:16:43.353  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+20:16:44.357  192.168.1.98:自动分配端口成功, ret = 0，port=10005
+20:16:44.360  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+20:16:44.362  192.168.1.98:bind 10005 port success, BindPort
+20:16:44.364  192.168.1.98:bind 10006 port succeed, hsdk_socket->port = 10006
+20:16:44.365  192.168.1.98:bind 10006 port success, nAlivePort
+20:16:44.370  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+20:16:45.372  接收jpeg流的ip和端口号:192.168.1.128-10000
+20:16:45.385  192.168.1.98:向设备发送5010命令成功
+20:16:45.393  192.168.1.98:向设备发送5012命令成功
+20:16:45.397  192.168.1.98:向设备发送5013命令成功
+20:16:45.398  KHT_InitRecvRecoRst is succeed
+20:16:45.399  192.168.1.98:识别结果接收启动
+20:16:45.399  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+20:16:45.400  KHT_OpenJpegStreamConnent is succeed
+20:16:45.424  192.168.1.98:JPEG流接收启动
+20:16:45.425  192.168.1.98:bind 10001 port succeed, hsdk_socket->port = 10001
+20:16:45.425  192.168.1.98:bind 10001 port success, alarm
+20:16:45.426  KHT_OpenAlarmConnent is succeed
+20:16:45.426  192.168.1.98:Alarm接收启动
+20:16:45.427  192.168.1.98:连接设备成功
+20:16:48.398  192.168.1.98:Server waiting accept client...
+20:16:48.400  192.168.1.98:(192.168.1.98) client connect
+20:16:58.786  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+20:16:58.788  192.168.1.98:RS485透明发送成功
+20:17:44.703  connect 192.168.1.98 fail!
+20:17:44.706  192.168.1.98:配置文件中获取网卡IP失败, ret = -3
+20:17:44.719  192.168.1.98:通过接口自动匹配本地ip地址为:192.168.1.128
+20:17:44.722  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+20:17:45.725  192.168.1.98:自动分配端口成功, ret = 0，port=10005
+20:17:45.726  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+20:17:45.727  192.168.1.98:bind 10005 port success, BindPort
+20:17:45.728  192.168.1.98:bind 10006 port succeed, hsdk_socket->port = 10006
+20:17:45.729  192.168.1.98:bind 10006 port success, nAlivePort
+20:17:45.734  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+20:17:45.842  192.168.1.98:bind 10010 port succeed, hsdk_socket->port = 10010
+20:17:46.848  接收jpeg流的ip和端口号:192.168.1.128-10010
+20:17:46.859  192.168.1.98:向设备发送5010命令成功
+20:17:46.864  192.168.1.98:向设备发送5012命令成功
+20:17:46.879  192.168.1.98:向设备发送5013命令成功
+20:17:46.880  KHT_InitRecvRecoRst is succeed
+20:17:46.881  192.168.1.98:识别结果接收启动
+20:17:46.882  192.168.1.98:bind 10010 port succeed, hsdk_socket->port = 10010
+20:17:46.882  KHT_OpenJpegStreamConnent is succeed
+20:17:46.883  192.168.1.98:JPEG流接收启动
+20:17:46.884  192.168.1.98:bind 10011 port succeed, hsdk_socket->port = 10011
+20:17:46.884  192.168.1.98:bind 10011 port success, alarm
+20:17:46.885  KHT_OpenAlarmConnent is succeed
+20:17:46.885  192.168.1.98:Alarm接收启动
+20:17:46.886  192.168.1.98:连接设备成功
+20:17:49.881  192.168.1.98:Server waiting accept client...
+20:17:49.883  192.168.1.98:(192.168.1.98) client connect
+20:18:49.129  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+20:18:49.132  192.168.1.98:RS485透明发送成功
+20:18:59.808  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+20:18:59.811  192.168.1.98:RS485透明发送成功
+20:20:45.654  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+20:20:45.658  192.168.1.98:RS485透明发送成功
+20:21:29.404  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+20:21:29.407  192.168.1.98:RS485透明发送成功
+20:21:33.360  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+20:21:33.364  192.168.1.98:RS485透明发送成功
+20:22:12.193  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+20:22:12.197  192.168.1.98:RS485透明发送成功
+20:23:00.986  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+20:23:00.990  192.168.1.98:RS485透明发送成功
+20:23:30.341  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+20:23:30.343  192.168.1.98:RS485透明发送成功
+20:24:30.603  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+20:24:30.607  192.168.1.98:RS485透明发送成功
+20:24:39.007  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+20:24:39.010  192.168.1.98:RS485透明发送成功
+20:24:54.055  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+20:24:54.059  192.168.1.98:RS485透明发送成功
+20:26:34.983  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+20:26:34.986  192.168.1.98:RS485透明发送成功
+20:26:38.796  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+20:26:38.800  192.168.1.98:RS485透明发送成功
+20:55:23.422  connect 192.168.1.98 fail!
+20:55:23.423  192.168.1.98:配置文件中获取网卡IP失败, ret = -3
+20:55:23.512  192.168.1.98:通过接口自动匹配本地ip地址为:192.168.1.128
+20:55:23.515  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+20:55:24.519  192.168.1.98:自动分配端口成功, ret = 0，port=10005
+20:55:24.520  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+20:55:24.520  192.168.1.98:bind 10005 port success, BindPort
+20:55:24.521  192.168.1.98:bind 10006 port succeed, hsdk_socket->port = 10006
+20:55:24.522  192.168.1.98:bind 10006 port success, nAlivePort
+20:55:24.527  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+20:55:25.529  接收jpeg流的ip和端口号:192.168.1.128-10000
+20:55:25.536  192.168.1.98:向设备发送5010命令成功
+20:55:25.543  192.168.1.98:向设备发送5012命令成功
+20:55:25.557  192.168.1.98:向设备发送5013命令成功
+20:55:25.560  KHT_InitRecvRecoRst is succeed
+20:55:25.562  192.168.1.98:识别结果接收启动
+20:55:25.564  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+20:55:25.567  KHT_OpenJpegStreamConnent is succeed
+20:55:25.568  192.168.1.98:JPEG流接收启动
+20:55:25.571  192.168.1.98:bind 10001 port succeed, hsdk_socket->port = 10001
+20:55:25.572  192.168.1.98:bind 10001 port success, alarm
+20:55:25.574  KHT_OpenAlarmConnent is succeed
+20:55:25.576  192.168.1.98:Alarm接收启动
+20:55:25.578  192.168.1.98:连接设备成功
+20:55:28.561  192.168.1.98:Server waiting accept client...
+20:55:28.562  192.168.1.98:(192.168.1.98) client connect
+20:55:55.703  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+20:55:55.706  192.168.1.98:RS485透明发送成功
+21:04:30.459  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+21:04:30.462  192.168.1.98:RS485透明发送成功
+21:05:26.861  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+21:05:26.866  192.168.1.98:RS485透明发送成功
+21:05:59.918  connect 192.168.1.98 fail!
+21:05:59.919  192.168.1.98:配置文件中获取网卡IP失败, ret = -3
+21:05:59.922  192.168.1.98:通过接口自动匹配本地ip地址为:192.168.1.128
+21:05:59.922  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:06:00.924  192.168.1.98:自动分配端口成功, ret = 0，port=10005
+21:06:00.926  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:06:00.928  192.168.1.98:bind 10005 port success, BindPort
+21:06:00.929  192.168.1.98:bind 10006 port succeed, hsdk_socket->port = 10006
+21:06:00.930  192.168.1.98:bind 10006 port success, nAlivePort
+21:06:00.935  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+21:06:01.936  接收jpeg流的ip和端口号:192.168.1.128-10000
+21:06:01.961  192.168.1.98:向设备发送5010命令成功
+21:06:01.977  192.168.1.98:向设备发送5012命令成功
+21:06:01.981  192.168.1.98:向设备发送5013命令成功
+21:06:01.983  KHT_InitRecvRecoRst is succeed
+21:06:01.983  192.168.1.98:识别结果接收启动
+21:06:01.985  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+21:06:01.986  KHT_OpenJpegStreamConnent is succeed
+21:06:01.987  192.168.1.98:JPEG流接收启动
+21:06:01.989  192.168.1.98:bind 10001 port succeed, hsdk_socket->port = 10001
+21:06:02.005  192.168.1.98:bind 10001 port success, alarm
+21:06:02.007  KHT_OpenAlarmConnent is succeed
+21:06:02.008  192.168.1.98:Alarm接收启动
+21:06:02.008  192.168.1.98:连接设备成功
+21:06:04.983  192.168.1.98:Server waiting accept client...
+21:06:04.984  192.168.1.98:(192.168.1.98) client connect
+21:06:11.201  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+21:06:11.203  192.168.1.98:RS485透明发送成功
+21:06:56.228  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+21:06:56.230  192.168.1.98:RS485透明发送成功
+21:07:42.840  connect 192.168.1.98 fail!
+21:07:42.843  192.168.1.98:配置文件中获取网卡IP失败, ret = -3
+21:07:42.853  192.168.1.98:通过接口自动匹配本地ip地址为:192.168.1.128
+21:07:42.856  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:07:43.858  192.168.1.98:自动分配端口成功, ret = 0，port=10005
+21:07:43.859  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:07:43.859  192.168.1.98:bind 10005 port success, BindPort
+21:07:43.860  192.168.1.98:bind 10006 port succeed, hsdk_socket->port = 10006
+21:07:43.860  192.168.1.98:bind 10006 port success, nAlivePort
+21:07:43.865  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+21:07:44.866  接收jpeg流的ip和端口号:192.168.1.128-10000
+21:07:44.874  192.168.1.98:向设备发送5010命令成功
+21:07:44.880  192.168.1.98:向设备发送5012命令成功
+21:07:44.885  192.168.1.98:向设备发送5013命令成功
+21:07:44.886  KHT_InitRecvRecoRst is succeed
+21:07:44.888  192.168.1.98:识别结果接收启动
+21:07:44.889  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+21:07:44.890  KHT_OpenJpegStreamConnent is succeed
+21:07:44.891  192.168.1.98:JPEG流接收启动
+21:07:44.891  192.168.1.98:bind 10001 port succeed, hsdk_socket->port = 10001
+21:07:44.892  192.168.1.98:bind 10001 port success, alarm
+21:07:44.893  KHT_OpenAlarmConnent is succeed
+21:07:44.894  192.168.1.98:Alarm接收启动
+21:07:44.894  192.168.1.98:连接设备成功
+21:07:47.887  192.168.1.98:Server waiting accept client...
+21:07:47.889  192.168.1.98:(192.168.1.98) client connect
+21:08:01.323  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+21:08:01.327  192.168.1.98:RS485透明发送成功
+21:09:22.999  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+21:09:23.003  192.168.1.98:RS485透明发送成功
+21:10:12.214  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+21:10:12.218  192.168.1.98:RS485透明发送成功
+21:11:39.797  connect 192.168.1.98 fail!
+21:11:39.798  192.168.1.98:配置文件中获取网卡IP失败, ret = -3
+21:11:39.800  192.168.1.98:通过接口自动匹配本地ip地址为:192.168.1.128
+21:11:39.801  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:11:40.802  192.168.1.98:自动分配端口成功, ret = 0，port=10005
+21:11:40.802  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:11:40.803  192.168.1.98:bind 10005 port success, BindPort
+21:11:40.803  192.168.1.98:bind 10006 port succeed, hsdk_socket->port = 10006
+21:11:40.804  192.168.1.98:bind 10006 port success, nAlivePort
+21:11:40.808  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+21:11:41.808  接收jpeg流的ip和端口号:192.168.1.128-10000
+21:11:41.819  192.168.1.98:向设备发送5010命令成功
+21:11:41.823  192.168.1.98:向设备发送5012命令成功
+21:11:41.830  192.168.1.98:向设备发送5013命令成功
+21:11:41.831  KHT_InitRecvRecoRst is succeed
+21:11:41.832  192.168.1.98:识别结果接收启动
+21:11:41.832  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+21:11:41.833  KHT_OpenJpegStreamConnent is succeed
+21:11:41.834  192.168.1.98:JPEG流接收启动
+21:11:41.834  192.168.1.98:bind 10001 port succeed, hsdk_socket->port = 10001
+21:11:41.835  192.168.1.98:bind 10001 port success, alarm
+21:11:41.835  KHT_OpenAlarmConnent is succeed
+21:11:41.836  192.168.1.98:Alarm接收启动
+21:11:41.836  192.168.1.98:连接设备成功
+21:11:44.833  192.168.1.98:Server waiting accept client...
+21:11:44.833  192.168.1.98:(192.168.1.98) client connect
+21:11:46.383  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+21:11:46.386  192.168.1.98:RS485透明发送成功
+21:11:55.384  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+21:11:55.387  192.168.1.98:RS485透明发送成功
+21:12:15.460  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+21:12:15.464  192.168.1.98:RS485透明发送成功
+21:13:36.105  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+21:13:36.108  192.168.1.98:RS485透明发送成功
+21:13:40.101  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+21:13:40.103  192.168.1.98:RS485透明发送成功
+21:14:03.952  connect 192.168.1.98 fail!
+21:14:03.952  192.168.1.98:配置文件中获取网卡IP失败, ret = -3
+21:14:03.955  192.168.1.98:通过接口自动匹配本地ip地址为:192.168.1.128
+21:14:03.956  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:14:04.957  192.168.1.98:自动分配端口成功, ret = 0，port=10005
+21:14:04.957  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:14:04.958  192.168.1.98:bind 10005 port success, BindPort
+21:14:04.958  192.168.1.98:bind 10006 port succeed, hsdk_socket->port = 10006
+21:14:04.959  192.168.1.98:bind 10006 port success, nAlivePort
+21:14:04.963  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+21:14:05.964  接收jpeg流的ip和端口号:192.168.1.128-10000
+21:14:05.970  192.168.1.98:向设备发送5010命令成功
+21:14:05.986  192.168.1.98:向设备发送5012命令成功
+21:14:05.991  192.168.1.98:向设备发送5013命令成功
+21:14:05.992  KHT_InitRecvRecoRst is succeed
+21:14:05.992  192.168.1.98:识别结果接收启动
+21:14:05.993  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+21:14:05.994  KHT_OpenJpegStreamConnent is succeed
+21:14:05.994  192.168.1.98:JPEG流接收启动
+21:14:05.995  192.168.1.98:bind 10001 port succeed, hsdk_socket->port = 10001
+21:14:05.995  192.168.1.98:bind 10001 port success, alarm
+21:14:05.996  KHT_OpenAlarmConnent is succeed
+21:14:05.996  192.168.1.98:Alarm接收启动
+21:14:05.997  192.168.1.98:连接设备成功
+21:14:08.993  192.168.1.98:Server waiting accept client...
+21:14:08.993  192.168.1.98:(192.168.1.98) client connect
+21:15:04.166  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+21:15:04.169  192.168.1.98:RS485透明发送成功
+21:16:07.280  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+21:16:07.284  192.168.1.98:RS485透明发送成功
+21:16:52.920  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+21:16:52.924  192.168.1.98:RS485透明发送成功
+21:20:39.388  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+21:20:39.390  192.168.1.98:RS485透明发送成功
+21:21:42.418  connect 192.168.1.98 fail!
+21:21:42.421  192.168.1.98:配置文件中获取网卡IP失败, ret = -3
+21:21:42.431  192.168.1.98:通过接口自动匹配本地ip地址为:192.168.1.128
+21:21:42.433  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:21:43.436  192.168.1.98:自动分配端口成功, ret = 0，port=10005
+21:21:43.437  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:21:43.438  192.168.1.98:bind 10005 port success, BindPort
+21:21:43.439  192.168.1.98:bind 10006 port succeed, hsdk_socket->port = 10006
+21:21:43.440  192.168.1.98:bind 10006 port success, nAlivePort
+21:21:43.445  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+21:21:44.446  接收jpeg流的ip和端口号:192.168.1.128-10000
+21:21:44.458  192.168.1.98:向设备发送5010命令成功
+21:21:44.463  192.168.1.98:向设备发送5012命令成功
+21:21:44.470  192.168.1.98:向设备发送5013命令成功
+21:21:44.473  KHT_InitRecvRecoRst is succeed
+21:21:44.474  192.168.1.98:识别结果接收启动
+21:21:44.476  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+21:21:44.477  KHT_OpenJpegStreamConnent is succeed
+21:21:44.478  192.168.1.98:JPEG流接收启动
+21:21:44.480  192.168.1.98:bind 10001 port succeed, hsdk_socket->port = 10001
+21:21:44.481  192.168.1.98:bind 10001 port success, alarm
+21:21:44.482  KHT_OpenAlarmConnent is succeed
+21:21:44.484  192.168.1.98:Alarm接收启动
+21:21:44.485  192.168.1.98:连接设备成功
+21:21:47.305  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+21:21:47.307  192.168.1.98:RS485透明发送成功
+21:21:47.474  192.168.1.98:Server waiting accept client...
+21:21:47.474  192.168.1.98:(192.168.1.98) client connect
+21:22:10.597  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+21:22:10.601  192.168.1.98:RS485透明发送成功
+21:25:29.523  connect 192.168.1.98 fail!
+21:25:29.524  192.168.1.98:配置文件中获取网卡IP失败, ret = -3
+21:25:29.545  192.168.1.98:通过接口自动匹配本地ip地址为:192.168.1.128
+21:25:29.551  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:25:30.553  192.168.1.98:自动分配端口成功, ret = 0，port=10005
+21:25:30.553  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:25:30.555  192.168.1.98:bind 10005 port success, BindPort
+21:25:30.556  192.168.1.98:bind 10006 port succeed, hsdk_socket->port = 10006
+21:25:30.557  192.168.1.98:bind 10006 port success, nAlivePort
+21:25:30.561  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+21:25:31.561  接收jpeg流的ip和端口号:192.168.1.128-10000
+21:25:31.581  192.168.1.98:向设备发送5010命令成功
+21:25:31.597  192.168.1.98:向设备发送5012命令成功
+21:25:31.604  192.168.1.98:向设备发送5013命令成功
+21:25:31.607  KHT_InitRecvRecoRst is succeed
+21:25:31.610  192.168.1.98:识别结果接收启动
+21:25:31.613  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+21:25:31.618  KHT_OpenJpegStreamConnent is succeed
+21:25:31.620  192.168.1.98:JPEG流接收启动
+21:25:31.627  192.168.1.98:bind 10001 port succeed, hsdk_socket->port = 10001
+21:25:31.629  192.168.1.98:bind 10001 port success, alarm
+21:25:31.631  KHT_OpenAlarmConnent is succeed
+21:25:31.634  192.168.1.98:Alarm接收启动
+21:25:31.636  192.168.1.98:连接设备成功
+21:25:34.608  192.168.1.98:Server waiting accept client...
+21:25:34.608  192.168.1.98:(192.168.1.98) client connect
+21:27:12.621  connect 192.168.1.98 fail!
+21:27:12.622  192.168.1.98:配置文件中获取网卡IP失败, ret = -3
+21:27:12.626  192.168.1.98:通过接口自动匹配本地ip地址为:192.168.1.128
+21:27:12.627  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:27:13.629  192.168.1.98:自动分配端口成功, ret = 0，port=10005
+21:27:13.630  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:27:13.631  192.168.1.98:bind 10005 port success, BindPort
+21:27:13.632  192.168.1.98:bind 10006 port succeed, hsdk_socket->port = 10006
+21:27:13.633  192.168.1.98:bind 10006 port success, nAlivePort
+21:27:13.638  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+21:27:14.638  接收jpeg流的ip和端口号:192.168.1.128-10000
+21:27:14.645  192.168.1.98:向设备发送5010命令成功
+21:27:14.658  192.168.1.98:向设备发送5012命令成功
+21:27:14.664  192.168.1.98:向设备发送5013命令成功
+21:27:14.666  KHT_InitRecvRecoRst is succeed
+21:27:14.667  192.168.1.98:识别结果接收启动
+21:27:14.668  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+21:27:14.669  KHT_OpenJpegStreamConnent is succeed
+21:27:14.670  192.168.1.98:JPEG流接收启动
+21:27:14.671  192.168.1.98:bind 10001 port succeed, hsdk_socket->port = 10001
+21:27:14.672  192.168.1.98:bind 10001 port success, alarm
+21:27:14.673  KHT_OpenAlarmConnent is succeed
+21:27:14.674  192.168.1.98:Alarm接收启动
+21:27:14.675  192.168.1.98:连接设备成功
+21:27:17.668  192.168.1.98:Server waiting accept client...
+21:27:17.669  192.168.1.98:(192.168.1.98) client connect
+21:28:03.680  connect 192.168.1.98 fail!
+21:28:03.680  192.168.1.98:配置文件中获取网卡IP失败, ret = -3
+21:28:03.683  192.168.1.98:通过接口自动匹配本地ip地址为:192.168.1.128
+21:28:03.683  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:28:04.685  192.168.1.98:自动分配端口成功, ret = 0，port=10005
+21:28:04.685  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:28:04.686  192.168.1.98:bind 10005 port success, BindPort
+21:28:04.686  192.168.1.98:bind 10006 port succeed, hsdk_socket->port = 10006
+21:28:04.687  192.168.1.98:bind 10006 port success, nAlivePort
+21:28:04.691  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+21:28:04.833  192.168.1.98:bind 10010 port succeed, hsdk_socket->port = 10010
+21:28:05.835  接收jpeg流的ip和端口号:192.168.1.128-10010
+21:28:05.840  192.168.1.98:向设备发送5010命令成功
+21:28:05.854  192.168.1.98:向设备发送5012命令成功
+21:28:05.872  192.168.1.98:向设备发送5013命令成功
+21:28:05.873  KHT_InitRecvRecoRst is succeed
+21:28:05.874  192.168.1.98:识别结果接收启动
+21:28:05.875  192.168.1.98:bind 10010 port succeed, hsdk_socket->port = 10010
+21:28:05.875  KHT_OpenJpegStreamConnent is succeed
+21:28:05.875  192.168.1.98:JPEG流接收启动
+21:28:05.876  192.168.1.98:bind 10011 port succeed, hsdk_socket->port = 10011
+21:28:05.877  192.168.1.98:bind 10011 port success, alarm
+21:28:05.877  KHT_OpenAlarmConnent is succeed
+21:28:05.878  192.168.1.98:Alarm接收启动
+21:28:05.878  192.168.1.98:连接设备成功
+21:28:08.874  192.168.1.98:Server waiting accept client...
+21:28:08.874  192.168.1.98:(192.168.1.98) client connect
+21:30:01.860  connect 192.168.1.98 fail!
+21:30:01.864  192.168.1.98:配置文件中获取网卡IP失败, ret = -3
+21:30:01.873  192.168.1.98:通过接口自动匹配本地ip地址为:192.168.1.128
+21:30:01.876  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:30:02.880  192.168.1.98:自动分配端口成功, ret = 0，port=10005
+21:30:02.881  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:30:02.882  192.168.1.98:bind 10005 port success, BindPort
+21:30:02.882  192.168.1.98:bind 10006 port succeed, hsdk_socket->port = 10006
+21:30:02.884  192.168.1.98:bind 10006 port success, nAlivePort
+21:30:02.889  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+21:30:03.891  接收jpeg流的ip和端口号:192.168.1.128-10000
+21:30:03.898  192.168.1.98:向设备发送5010命令成功
+21:30:03.903  192.168.1.98:向设备发送5012命令成功
+21:30:03.912  192.168.1.98:向设备发送5013命令成功
+21:30:03.913  KHT_InitRecvRecoRst is succeed
+21:30:03.915  192.168.1.98:识别结果接收启动
+21:30:03.918  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+21:30:03.919  KHT_OpenJpegStreamConnent is succeed
+21:30:03.921  192.168.1.98:JPEG流接收启动
+21:30:03.924  192.168.1.98:bind 10001 port succeed, hsdk_socket->port = 10001
+21:30:03.925  192.168.1.98:bind 10001 port success, alarm
+21:30:03.926  KHT_OpenAlarmConnent is succeed
+21:30:03.927  192.168.1.98:Alarm接收启动
+21:30:03.927  192.168.1.98:连接设备成功
+21:30:06.914  192.168.1.98:Server waiting accept client...
+21:30:06.914  192.168.1.98:(192.168.1.98) client connect
+21:30:57.207  connect 192.168.1.98 fail!
+21:30:57.207  192.168.1.98:配置文件中获取网卡IP失败, ret = -3
+21:30:57.210  192.168.1.98:通过接口自动匹配本地ip地址为:192.168.1.128
+21:30:57.210  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:30:58.212  192.168.1.98:自动分配端口成功, ret = 0，port=10005
+21:30:58.213  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:30:58.213  192.168.1.98:bind 10005 port success, BindPort
+21:30:58.214  192.168.1.98:bind 10006 port succeed, hsdk_socket->port = 10006
+21:30:58.214  192.168.1.98:bind 10006 port success, nAlivePort
+21:30:58.219  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+21:30:59.219  接收jpeg流的ip和端口号:192.168.1.128-10000
+21:30:59.226  192.168.1.98:向设备发送5010命令成功
+21:30:59.230  192.168.1.98:向设备发送5012命令成功
+21:30:59.235  192.168.1.98:向设备发送5013命令成功
+21:30:59.236  KHT_InitRecvRecoRst is succeed
+21:30:59.237  192.168.1.98:识别结果接收启动
+21:30:59.237  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+21:30:59.238  KHT_OpenJpegStreamConnent is succeed
+21:30:59.239  192.168.1.98:JPEG流接收启动
+21:30:59.240  192.168.1.98:bind 10001 port succeed, hsdk_socket->port = 10001
+21:30:59.240  192.168.1.98:bind 10001 port success, alarm
+21:30:59.241  KHT_OpenAlarmConnent is succeed
+21:30:59.241  192.168.1.98:Alarm接收启动
+21:30:59.242  192.168.1.98:连接设备成功
+21:31:02.237  192.168.1.98:Server waiting accept client...
+21:31:02.239  192.168.1.98:(192.168.1.98) client connect
+21:33:42.164  connect 192.168.1.98 fail!
+21:33:42.164  192.168.1.98:配置文件中获取网卡IP失败, ret = -3
+21:33:42.167  192.168.1.98:通过接口自动匹配本地ip地址为:192.168.1.128
+21:33:42.168  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:33:43.169  192.168.1.98:自动分配端口成功, ret = 0，port=10005
+21:33:43.169  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:33:43.170  192.168.1.98:bind 10005 port success, BindPort
+21:33:43.170  192.168.1.98:bind 10006 port succeed, hsdk_socket->port = 10006
+21:33:43.171  192.168.1.98:bind 10006 port success, nAlivePort
+21:33:43.175  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+21:33:44.176  接收jpeg流的ip和端口号:192.168.1.128-10000
+21:33:44.181  192.168.1.98:向设备发送5010命令成功
+21:33:44.203  192.168.1.98:向设备发送5012命令成功
+21:33:44.216  192.168.1.98:向设备发送5013命令成功
+21:33:44.217  KHT_InitRecvRecoRst is succeed
+21:33:44.218  192.168.1.98:识别结果接收启动
+21:33:44.218  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+21:33:44.219  KHT_OpenJpegStreamConnent is succeed
+21:33:44.220  192.168.1.98:JPEG流接收启动
+21:33:44.221  192.168.1.98:bind 10001 port succeed, hsdk_socket->port = 10001
+21:33:44.221  192.168.1.98:bind 10001 port success, alarm
+21:33:44.222  KHT_OpenAlarmConnent is succeed
+21:33:44.222  192.168.1.98:Alarm接收启动
+21:33:44.223  192.168.1.98:连接设备成功
+21:33:47.218  192.168.1.98:Server waiting accept client...
+21:33:47.218  192.168.1.98:(192.168.1.98) client connect
+21:34:02.769  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+21:34:02.772  192.168.1.98:RS485透明发送成功
+21:36:30.779  connect 192.168.1.98 fail!
+21:36:30.779  192.168.1.98:配置文件中获取网卡IP失败, ret = -3
+21:36:30.782  192.168.1.98:通过接口自动匹配本地ip地址为:192.168.1.128
+21:36:30.783  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:36:31.784  192.168.1.98:自动分配端口成功, ret = 0，port=10005
+21:36:31.784  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:36:31.785  192.168.1.98:bind 10005 port success, BindPort
+21:36:31.786  192.168.1.98:bind 10006 port succeed, hsdk_socket->port = 10006
+21:36:31.786  192.168.1.98:bind 10006 port success, nAlivePort
+21:36:31.797  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+21:36:32.798  接收jpeg流的ip和端口号:192.168.1.128-10000
+21:36:32.802  192.168.1.98:向设备发送5010命令成功
+21:36:32.810  192.168.1.98:向设备发送5012命令成功
+21:36:32.836  192.168.1.98:向设备发送5013命令成功
+21:36:32.837  KHT_InitRecvRecoRst is succeed
+21:36:32.838  192.168.1.98:识别结果接收启动
+21:36:32.839  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+21:36:32.840  KHT_OpenJpegStreamConnent is succeed
+21:36:32.840  192.168.1.98:JPEG流接收启动
+21:36:32.841  192.168.1.98:bind 10001 port succeed, hsdk_socket->port = 10001
+21:36:32.842  192.168.1.98:bind 10001 port success, alarm
+21:36:32.842  KHT_OpenAlarmConnent is succeed
+21:36:32.843  192.168.1.98:Alarm接收启动
+21:36:32.843  192.168.1.98:连接设备成功
+21:36:35.849  192.168.1.98:Server waiting accept client...
+21:36:35.853  192.168.1.98:(192.168.1.98) client connect
+21:37:29.743  192.168.1.98:bind 0 port succeed, hsdk_socket->port = 0
+21:37:29.746  192.168.1.98:RS485透明发送成功
+21:39:19.529  connect 192.168.1.98 fail!
+21:39:19.531  192.168.1.98:配置文件中获取网卡IP失败, ret = -3
+21:39:19.539  192.168.1.98:通过接口自动匹配本地ip地址为:192.168.1.128
+21:39:19.541  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:39:20.543  192.168.1.98:自动分配端口成功, ret = 0，port=10005
+21:39:20.545  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:39:20.547  192.168.1.98:bind 10005 port success, BindPort
+21:39:20.549  192.168.1.98:bind 10006 port succeed, hsdk_socket->port = 10006
+21:39:20.550  192.168.1.98:bind 10006 port success, nAlivePort
+21:39:20.556  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+21:39:21.557  接收jpeg流的ip和端口号:192.168.1.128-10000
+21:39:21.573  192.168.1.98:向设备发送5010命令成功
+21:39:21.596  192.168.1.98:向设备发送5012命令成功
+21:39:21.601  192.168.1.98:向设备发送5013命令成功
+21:39:21.602  KHT_InitRecvRecoRst is succeed
+21:39:21.602  192.168.1.98:识别结果接收启动
+21:39:21.603  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+21:39:21.604  KHT_OpenJpegStreamConnent is succeed
+21:39:21.604  192.168.1.98:JPEG流接收启动
+21:39:21.605  192.168.1.98:bind 10001 port succeed, hsdk_socket->port = 10001
+21:39:21.606  192.168.1.98:bind 10001 port success, alarm
+21:39:21.607  KHT_OpenAlarmConnent is succeed
+21:39:21.608  192.168.1.98:Alarm接收启动
+21:39:21.608  192.168.1.98:连接设备成功
+21:39:24.602  192.168.1.98:Server waiting accept client...
+21:39:24.604  192.168.1.98:(192.168.1.98) client connect
+21:41:16.343  connect 192.168.1.98 fail!
+21:41:16.343  192.168.1.98:配置文件中获取网卡IP失败, ret = -3
+21:41:16.346  192.168.1.98:通过接口自动匹配本地ip地址为:192.168.1.128
+21:41:16.347  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:41:17.349  192.168.1.98:自动分配端口成功, ret = 0，port=10005
+21:41:17.349  192.168.1.98:bind 10005 port succeed, hsdk_socket->port = 10005
+21:41:17.350  192.168.1.98:bind 10005 port success, BindPort
+21:41:17.351  192.168.1.98:bind 10006 port succeed, hsdk_socket->port = 10006
+21:41:17.351  192.168.1.98:bind 10006 port success, nAlivePort
+21:41:17.356  192.168.1.98:bind 10000 port succeed, hsdk_socket->port = 10000
+21:41:17.413  192.168.1.98:bind 10010 port succeed, hsdk_socket->port = 10010
+21:41:18.415  接收jpeg流的ip和端口号:192.168.1.128-10010
+21:41:18.444  192.168.1.98:向设备发送5010命令成功
+21:41:18.449  192.168.1.98:向设备发送5012命令成功
+21:41:18.464  192.168.1.98:向设备发送5013命令成功
+21:41:18.464  KHT_InitRecvRecoRst is succeed
+21:41:18.465  192.168.1.98:识别结果接收启动
+21:41:18.466  192.168.1.98:bind 10010 port succeed, hsdk_socket->port = 10010
+21:41:18.466  KHT_OpenJpegStreamConnent is succeed
+21:41:18.467  192.168.1.98:JPEG流接收启动
+21:41:18.467  192.168.1.98:bind 10011 port succeed, hsdk_socket->port = 10011
+21:41:18.468  192.168.1.98:bind 10011 port success, alarm
+21:41:18.468  KHT_OpenAlarmConnent is succeed
+21:41:18.469  192.168.1.98:Alarm接收启动
+21:41:18.469  192.168.1.98:连接设备成功
+21:41:21.465  192.168.1.98:Server waiting accept client...
+21:41:21.465  192.168.1.98:(192.168.1.98) client connect

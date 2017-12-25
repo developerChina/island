@@ -8,18 +8,18 @@ import org.core.dao.BaseDaoImpl;
 public class TestMain {
 
 	public static void main(String[] args) {
-//		createVIPQueue();
-//		createGuestQueue();
-		deleteQueue();
+		createVIPQueue();
+		createGuestQueue();
+//		deleteQueue();
 	}
 	/**
 	 * 生成卸货岛VIP队列
 	 */
 	public static void createVIPQueue(){
 		BaseDao baseDao = new BaseDaoImpl();
-		for (int i = 1; i <11; i++) {
+		for (int i = 1; i <2; i++) {
 			 String sql="insert into logis_vip (island_no,car_code,queue_number,comein_time,goout_time) value (?,?,?,?,?)";
-			 Object[] para={1,"蒙A12345",i,"2015-12-11 12:12:12","2015-12-11 12:12:12"};
+			 Object[] para={1,"川A738F6",i,"2015-12-11 12:12:12","2015-12-11 12:12:12"};
 			 try {
 				baseDao.insertSql(sql, para);
 				System.err.println("创建一条VIP");
@@ -33,9 +33,9 @@ public class TestMain {
 	 */
 	public static void createGuestQueue(){
 		BaseDao baseDao = new BaseDaoImpl();
-		for (int i = 1; i <11; i++) {
+		for (int i = 1; i <2; i++) {
 			 String sql="insert into logis_ordinary (island_no,car_code,queue_number,comein_time,goout_time) value (?,?,?,?,?)";
-			 Object[] para={1,"蒙A12345",i,"2015-12-11 12:12:12","2015-12-11 12:12:12"};
+			 Object[] para={1,"京B02128",i,"2015-12-11 12:12:12","2015-12-11 12:12:12"};
 			 try {
 				baseDao.insertSql(sql, para);
 				System.err.println("创建一条guest");

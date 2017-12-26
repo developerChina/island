@@ -113,7 +113,7 @@ public class IslandApp implements SerialPortEventListener {
 			//添加历史记录
 			String data = FileLockUtil.readByLines(System.getProperty("user.dir") + "\\bin\\res\\Sequence.txt");
 			String[] data_=data.split(",");
-			if(!data.equals("") && data_.length==5) {
+			if(!data.equals("") && data_.length==4) {
 				String flag=data_[0];
 				String car_code=data_[1];
 				String id=data_[2];

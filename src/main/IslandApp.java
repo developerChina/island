@@ -10,14 +10,13 @@ import java.util.Properties;
 
 import org.core.dao.BaseDao;
 import org.core.dao.BaseDaoImpl;
+import org.core.utils.GenId;
 
 import com.eparking.api.EPIntegrateBox;
 
 import gnu.io.SerialPort;
 import gnu.io.SerialPortEvent;
 import gnu.io.SerialPortEventListener;
-import utils.DateStyle;
-import utils.DateUtil;
 import utils.FileLockUtil;
 import utils.LoadPropertyUtil;
 import utils.SerialTool;
@@ -47,6 +46,7 @@ public class IslandApp implements SerialPortEventListener {
 	public static UnIslandQueue queue=null;
 	// 9.定义当前队列类型
 	public static int source=0;;// 0=vip  , 1=普通表
+	public static String uuid=null;// 历史记录表id
 		
 	String com=(String) properties.get("com");
 	String eparkIp=(String) properties.get("eparkIp");
@@ -116,13 +116,12 @@ public class IslandApp implements SerialPortEventListener {
 			if(!data.equals("") && data_.length==5) {
 				String flag=data_[0];
 				String car_code=data_[1];
-				String comeinTime=data_[2];
-				String soure=data_[3];
-				if("1".equals(flag)) {
-					 String sql="insert into logis_history (island_no,car_code,comein_time,goout_time,source) value (?,?,?,?,?)";
-					 Object[] para={unIsland,car_code,comeinTime,new Timestamp(System.currentTimeMillis()),soure};
+				String id=data_[2];
+				if("1".equals(flag)&&uuid!=null) {
+					 String sql="update logis_history set goout_time = ? where id =?";
+					 Object[] para={new Timestamp(System.currentTimeMillis()),id};
 					 baseDao.insertSql(sql, para);
-					 System.out.println("生成历史:"+car_code+"类型:"+unIsland);
+					 System.out.println("修改历史:"+id+"车牌号："+car_code);
 				}
 			}
 			
@@ -133,19 +132,27 @@ public class IslandApp implements SerialPortEventListener {
 				queue.setComein_time(new Date());
 				source=0;
 				baseDao.executeUpdate("delete from logis_vip where id = ? ",queue.getId());
-				System.out.println("消费VIP:"+queue.getId()+"同时入口抬杆，出口落杆");
-				
+				System.out.println("消费VIP:"+queue.getId()+"---");
+				 //添加历史记录
+				 uuid=GenId.UUID();
+				 String sql="insert into logis_history (id,island_no,car_code,comein_time,source) value (?,?,?,?,?)";
+				 Object[] para={uuid,unIsland,queue.getCar_code(),new Timestamp(System.currentTimeMillis()),source};
+				 baseDao.insertSql(sql, para);
+				 System.out.println("生成历史:"+uuid+"类型:"+source);
 			}else{
-				
 				Object obj_guest= baseDao.queryFirst(UnIslandQueue.class, "select * from logis_ordinary order by queue_number");
 				if(obj_guest!=null){
 					queue=(UnIslandQueue) obj_guest;
 					queue.setComein_time(new Date());
 					source=1;
 					baseDao.executeUpdate("delete from logis_ordinary where id = ? ",queue.getId());
-					System.out.println("消费Guest:"+queue.getId()+"入口抬杆，出口落杆");
-					//添加入口抬杆，出口落杆
-					
+					System.out.println("消费Guest:"+queue.getId()+"---");
+					//添加历史记录
+					 uuid=GenId.UUID();
+					 String sql="insert into logis_history (id,island_no,car_code,comein_time,source) value (?,?,?,?,?)";
+					 Object[] para={uuid,unIsland,queue.getCar_code(),new Timestamp(System.currentTimeMillis()),source};
+					 baseDao.insertSql(sql, para);
+					 System.out.println("生成历史:"+uuid+"类型:"+source);
 				}else{
 					queue=null;
 					source=0;
@@ -159,7 +166,8 @@ public class IslandApp implements SerialPortEventListener {
 		
 		//判断没有队列
 		if(queue!=null){
-			String data = "0,"+queue.getCar_code()+","+DateUtil.DateToString(queue.getComein_time(), DateStyle.YYYY_MM_DD_HH_MM_SS)+","+source+",";
+			//data=状态，车牌号，历史记录id
+			String data = "0,"+queue.getCar_code()+","+uuid+",";
 			FileLockUtil.saveAs(data,System.getProperty("user.dir") + "\\bin\\res\\Sequence.txt");
 			/**
 			 * 2:语音播报 

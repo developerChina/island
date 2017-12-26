@@ -6,16 +6,15 @@ import java.util.Date;
 
 import org.core.dao.BaseDao;
 import org.core.dao.BaseDaoImpl;
+import org.core.utils.GenId;
 
-import utils.DateStyle;
-import utils.DateUtil;
 import utils.FileLockUtil;
 
 public class TestMain {
 
 	public static void main(String[] args) {
-//		createVIPQueue();
-//		createGuestQueue();
+		createVIPQueue();
+		createGuestQueue();
 		deleteQueue();
 	}
 	/**
@@ -56,22 +55,24 @@ public class TestMain {
 		int unIsland=1;
 		UnIslandQueue queue=null;
 		int source=0;
+		String uuid=null;
 		for (int i = 0; i < 100; i++) {
+			/**
+			 * 1: 记录压入 车辆识别的队列里
+			 */
 			try { 
 				//添加历史记录
 				String data = FileLockUtil.readByLines(System.getProperty("user.dir") + "\\bin\\res\\Sequence.txt");
 				String[] data_=data.split(",");
-				System.out.println(data);
-				if(!data.equals("") && data_.length==5) {
+				if(!data.equals("") && data_.length==4) {
 					String flag=data_[0];
 					String car_code=data_[1];
-					String comeinTime=data_[2];
-					int soure=Integer.parseInt(data_[3]);
+					String id=data_[2];
 					if("1".equals(flag)) {
-						 String sql="insert into logis_history (island_no,car_code,comein_time,goout_time,source) value (?,?,?,?,?)";
-						 Object[] para={unIsland,car_code,comeinTime,new Timestamp(System.currentTimeMillis()),soure};
+						 String sql="update logis_history set goout_time = ? where id =?";
+						 Object[] para={new Timestamp(System.currentTimeMillis()),id};
 						 baseDao.insertSql(sql, para);
-						 System.out.println("生成历史:"+car_code+"类型:"+unIsland);
+						 System.out.println("修改历史:"+id+"车牌号："+car_code);
 					}
 				}
 				
@@ -82,20 +83,29 @@ public class TestMain {
 					queue.setComein_time(new Date());
 					source=0;
 					baseDao.executeUpdate("delete from logis_vip where id = ? ",queue.getId());
-					System.out.println("消费VIP:"+queue.getId()+"同时入口抬杆，出口落杆");
-					
+					System.out.println("消费VIP:"+queue.getId()+"---");
+					 //添加历史记录
+					 uuid=GenId.UUID();
+					 String sql="insert into logis_history (id,island_no,car_code,comein_time,source) value (?,?,?,?,?)";
+					 Object[] para={uuid,unIsland,queue.getCar_code(),new Timestamp(System.currentTimeMillis()),source};
+					 baseDao.insertSql(sql, para);
+					 System.out.println("生成历史:"+uuid+"类型:"+source);
 				}else{
-					
 					Object obj_guest= baseDao.queryFirst(UnIslandQueue.class, "select * from logis_ordinary order by queue_number");
 					if(obj_guest!=null){
 						queue=(UnIslandQueue) obj_guest;
 						queue.setComein_time(new Date());
 						source=1;
 						baseDao.executeUpdate("delete from logis_ordinary where id = ? ",queue.getId());
-						System.out.println("消费Guest:"+queue.getId()+"入口抬杆，出口落杆");
-						//添加入口抬杆，出口落杆
-						
+						System.out.println("消费Guest:"+queue.getId()+"---");
+						//添加历史记录
+						 uuid=GenId.UUID();
+						 String sql="insert into logis_history (id,island_no,car_code,comein_time,source) value (?,?,?,?,?)";
+						 Object[] para={uuid,unIsland,queue.getCar_code(),new Timestamp(System.currentTimeMillis()),source};
+						 baseDao.insertSql(sql, para);
+						 System.out.println("生成历史:"+uuid+"类型:"+source);
 					}else{
+						System.out.println("------------------"+i);
 						queue=null;
 						source=0;
 						FileLockUtil.saveAs("",System.getProperty("user.dir") + "\\bin\\res\\Sequence.txt");
@@ -105,7 +115,8 @@ public class TestMain {
 				e.printStackTrace();
 			}
 			if(queue!=null){
-				String data = "1,"+queue.getCar_code()+","+DateUtil.DateToString(queue.getComein_time(), DateStyle.YYYY_MM_DD_HH_MM_SS)+","+source+",";
+				//data=状态，车牌号，历史记录id
+				String data = "1,"+queue.getCar_code()+","+uuid+",";
 				FileLockUtil.saveAs(data,System.getProperty("user.dir") + "\\bin\\res\\Sequence.txt");
 			}
 		}
